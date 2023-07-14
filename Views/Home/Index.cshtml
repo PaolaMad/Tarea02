@@ -1,0 +1,61 @@
+﻿@model NewsIndexModel
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+
+<div class="m-5">
+    <h1 class="fw-bold">¡Bienvenido!</h1>
+    <h3>Exprésate y comunica con transparencia, confiabilidad y seguridad</h3>
+</div>
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src= "~/images/portada.jpg" class="d-block w-100">
+        </div>
+        <div class="carousel-item">
+            <img src="~/images/portada2.jpg" class="d-block w-100">
+        </div>
+        <div class="carousel-item">
+            <img src="~/images/portada3.jpg" class="d-block w-100">
+        </div>
+        <div class="carousel-item">
+            <img src="~/images/portada4.jpg" class="d-block w-100">
+        </div>
+    </div>
+</div>
+
+<partial name="_NewsPartial" model="Model.News"></partial>
+
+<button onclick="mostrarOcultar()" class="btn btn-outline-info mt-5" type="button">Añadir Noticia</button>
+
+<div id="ocultable" class="m-5 p-2 border border-dark rounded-2">
+
+    <partial name="_FormPartial">
+
+        <button class="btn btn-outline-danger mx-2 mt-2" onclick="mostrarOcultar()">Cancelar</button>
+
+</div>
+
+
+
+<script>
+
+    element = document.getElementById('ocultable');
+    element.style.display = 'none';
+
+    function mostrarOcultar() {
+
+        element = document.getElementById('ocultable');
+        estado = element.style.display;
+        if (estado == 'none') {
+            element.style.display = 'block'
+        } else {
+            element.style.display = 'none';
+        }
+
+    }
+
+</script>

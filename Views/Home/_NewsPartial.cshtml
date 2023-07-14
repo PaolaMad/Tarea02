@@ -1,0 +1,36 @@
+﻿@model IList<New>
+
+@if (Model is not null)
+{
+
+    <div class="text-center pt-5">
+        <h3 class="mb-3">Recientes</h3>
+
+        <div class="container">
+
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+
+                @foreach (var news in Model)
+                {
+
+                    <div class="col">
+
+                        <div class="card bg-light" style="width: 18rem;">
+                            
+                            <img src="@news.ImageURL" class="card-img-top" >
+                            
+                            <div class="card-body">
+                                <h5 class="card-title">@news.Tittle</h5>
+                                <a href="#" class="btn btn-primary">Ir</a>
+                            </div>
+                        
+                        </div>
+                    </div>
+
+                }
+
+            </div>
+        </div>
+    </div>
+
+}

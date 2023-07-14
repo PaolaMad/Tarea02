@@ -1,0 +1,42 @@
+﻿@model IList<New>
+
+
+@{
+
+    ViewData["Title"] = "Internacionales";
+
+}
+
+@if (Model is not null)
+{
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4 m-5">
+            @foreach (var New in Model)
+            {
+
+                string categoria = New.Category;
+
+                if (categoria == "Internacionales")
+                {
+
+                    <div class="col">
+                        <div class="card h-100">
+                            <img class="card-img-top p-1" src="@New.ImageURL" alt="@New.Tittle" />
+                            <div class="card-body">
+                                <h5 class="card-title">@New.Tittle</h5>
+                                <p class="card-text">@New.Description</p>
+
+                                <div class="card-footer">
+                                    <h6 class="fw-light">@New.Author</h6>
+                                    <a class="btn btn-primary" href="@New.Author">Ir</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            }
+        </div>
+    </div>
+};
